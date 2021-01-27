@@ -77,7 +77,7 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
     if(key!=='PATH' && process.env.hasOwnProperty(key))
       vars.push({
         "Key": key,
-        "Value": process.env[key]
+        "Value": process.env.[key]
       })
   }
   console.log(`您一共填写了${vars.length}个环境变量`)
