@@ -75,9 +75,10 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
   let vars = []
   for(let key in obj.jobs.build.steps[3].env){
     if(key!=='PATH' && process.env.hasOwnProperty(key))
+      console.log(key +':'+ process.env[key])
       vars.push({
         "Key": key,
-        "Value": process.env.[key]
+        "Value": process.env[key]
       })
   }
   console.log(`您一共填写了${vars.length}个环境变量`)
