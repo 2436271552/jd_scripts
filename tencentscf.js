@@ -74,8 +74,8 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
   let obj = yaml.load(fs.readFileSync(inputYML, {encoding: 'utf-8'}))
   let vars = []
   for(let key in obj.jobs.build.steps[3].env){
-    if(key!=='PATH' && process.env.hasOwnProperty(key))
       console.log(key +':'+ process.env[key])
+    if(key!=='PATH' && process.env.hasOwnProperty(key))
       vars.push({
         "Key": key,
         "Value": process.env[key]
